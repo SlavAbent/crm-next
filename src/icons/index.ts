@@ -1,9 +1,13 @@
-import { DashboardIcon } from "./DashboardIcon";
-import { ProfileIcon } from "./ProfileIcon";
-import { SettingsIcon } from "./SettingsIcon";
+import { DashboardIcon } from './DashboardIcon'
+import { ProfileIcon } from './ProfileIcon'
+import { SettingsIcon } from './SettingsIcon'
+import { ExpandIcon } from './ExpandIcon'
+import { TasksIcon } from './TasksIcon'
 
 export const icons = {
+  TasksIcon,
+  ExpandIcon,
   DashboardIcon,
   ProfileIcon,
   SettingsIcon,
-};
+}

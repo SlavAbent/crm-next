@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ProfileIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
+export const TasksIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
   width = 32,
   height = 32,
   stroke = 'currentColor',
@@ -19,9 +19,11 @@ export const ProfileIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
       stroke-linecap="round"
       stroke-linejoin="round"
     >
-      <path d="M11.5 15H7a4 4 0 0 0-4 4v2" />
-      <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
-      <circle cx="10" cy="7" r="4" />
+      <path d="M13 5h8" />
+      <path d="M13 12h8" />
+      <path d="M13 19h8" />
+      <path d="m3 17 2 2 4-4" />
+      <path d="m3 7 2 2 4-4" />
     </svg>
   )
 }

@@ -2,11 +2,11 @@ import { getLists } from '@/lib/api/getLists'
 import { Suspense } from 'react'
 import Lists from './Lists'
 
-export async function Folders() {
-  const lists = await getLists()
+export default function Folders() {
+  const listsPromise = getLists()
   return (
     <Suspense fallback={<div>Загрузка списков...</div>}>
-      <Lists lists={lists} />
+      <Lists listsPromise={listsPromise} />
     </Suspense>
   )
 }

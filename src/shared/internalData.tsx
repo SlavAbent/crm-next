@@ -1,5 +1,5 @@
 import { icons } from '@/icons/'
-const { DashboardIcon, SettingsIcon, ProfileIcon } = icons
+const { DashboardIcon, SettingsIcon, ProfileIcon, TasksIcon } = icons
 
 export const linkData = [
   {
@@ -12,18 +12,12 @@ export const linkData = [
     id: 1,
     href: '/tasks',
     text: 'Tasks',
-    icon: <DashboardIcon />,
+    icon: <TasksIcon />,
   },
   {
     id: 2,
     href: '/profile',
     text: 'Profile',
     icon: <ProfileIcon />,
-  },
-  {
-    id: 3,
-    href: '/settings',
-    text: 'Settings',
-    icon: <SettingsIcon />,
   },
 ]

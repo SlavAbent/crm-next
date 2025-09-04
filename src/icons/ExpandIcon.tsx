@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const DashboardIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
+export const ExpandIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
   width = 32,
   height = 32,
   stroke = 'currentColor',
@@ -10,17 +10,19 @@ export const DashboardIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
+      fill={fill}
+      {...props}
+      stroke={stroke}
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
     >
-      <rect width="18" height="18" x="3" y="3" rx="2" />
-      <path d="M12 3v18" />
+      <path d="m9 6-6 6 6 6" />
+      <path d="M3 12h14" />
+      <path d="M21 19V5" />
     </svg>
   )
 }

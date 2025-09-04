@@ -2,27 +2,27 @@
   "lists": [
     {
       "id": 1,
-      "name": "Продажи",
+      "name": "Sales",
       "colorId": 1
     },
     {
       "id": 2,
-      "name": "Фронтенд",
+      "name": "Frontend",
       "colorId": 2
     },
     {
       "id": 3,
-      "name": "Фильмы и сериалы",
+      "name": "Weekends",
       "colorId": 3
     },
     {
       "id": 4,
-      "name": "Книги",
+      "name": "Books",
       "colorId": 4
     },
     {
       "id": 5,
-      "name": "Личное",
+      "name": "Personal",
       "colorId": 5
     }
   ],
