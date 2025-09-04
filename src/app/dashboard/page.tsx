@@ -1,7 +1,15 @@
-export default function Dashboard() {
+import { Suspense } from "react";
+import { getLists } from "@/lib/api/getLists";
+import Lists from "./components/Lists";
+
+
+export default async function Dashboard() {
+  const lists = await getLists();
   return (
-    <>
-    <div>dashboard</div>
-    </>
+    <div className="">
+      <p>Список из {lists.length} папок</p>
+      
+    </div>
+    
   );
 }
