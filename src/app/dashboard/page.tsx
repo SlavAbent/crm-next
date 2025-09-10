@@ -1,12 +1,10 @@
-import { Suspense } from 'react'
 import { getLists } from '@/lib/api/getLists'
-import Lists from './components/Aside/List/Lists'
+import { getTasks } from '@/lib/api/getTasks'
+import DashboardContent from './components/DashbordContent'
+import { getColors } from '@/lib/api/getColors'
 
 export default async function Dashboard() {
-  const lists = await getLists()
-  return (
-    <div className="">
-      <p>Список из {lists.length} папок</p>
-    </div>
-  )
+  const dataAllPromises = Promise.all([getLists(), getColors(), getTasks()])
+
+  return <DashboardContent dataAllPromises={dataAllPromises} />
 }

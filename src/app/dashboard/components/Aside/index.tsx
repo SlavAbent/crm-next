@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { linkData } from '@/shared/internalData'
 import { RouteItem } from './RouteItem'
 import { HeaderAside } from './HeaderAside'
 import clsx from 'clsx'
-import Folders from './List/Folders'
 import { SettingsIcon } from '@/icons/SettingsIcon'
+import Folders from './FolderContent'
 
 export function Aside() {
   return (
@@ -18,7 +18,7 @@ export function Aside() {
       <div className="mb-[48px] w-full">
         <HeaderAside />
       </div>
-      <div className="mb-[48px]">
+      <div className="mb-[32px]">
         {linkData.map(({ id, href, text, icon }) => (
           <RouteItem
             key={`${id}${href}`}

@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 
 import { Aside } from '@/app/dashboard/components/Aside'
 import type { Metadata } from 'next'
+import { TasksProvider } from '@/shared/context/TasksContext'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,8 +32,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col`}
       >
         <div className="flex flex-row w-full h-screen">
-          <Aside />
-          {children}
+          <TasksProvider>
+            <Aside />
+            {children}
+          </TasksProvider>
         </div>
       </body>
     </html>
