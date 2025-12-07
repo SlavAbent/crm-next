@@ -1,15 +1,11 @@
-import { DashboardIcon } from '@/icons/DashboardIcon'
 import clsx from 'clsx'
 
-export const HeaderAside = ({
-                              className
-                            }: {
-  className: string;
-}) => {
+export const HeaderAside = ({ className }: { className: string }) => {
   return (
     <div
       className={clsx(
-        'font-semibold leading-[140%] text-[40px] text-center w-full', className
+        'w-full text-center text-[40px] leading-[140%] font-semibold',
+        className,
       )}
     >
       <span>Dailys</span>

@@ -3,32 +3,26 @@
 import { useTasksContext } from '@/shared/hooks/useTasksContext'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Color, List, Task } from './types'
+import { DataPropsType } from '../types'
 
-interface Props {
-  lists: List[]
-  colors: Color[]
-  tasks: Task[]
-}
-
-export default function ListsClient({ lists, colors }: Props) {
+export default function ListsClient({ lists, colors }: DataPropsType) {
   const { setSelectedListId } = useTasksContext()
 
   return (
     <div className="flex flex-col gap-y-2">
-      {lists.map(list => {
-        const folderColor = colors.find(c => Number(c.id) === list.colorId)
+      {lists.map((list) => {
+        const folderColor = colors.find((c) => Number(c.id) === list.colorId)
 
         return (
           <Button
             key={list.id}
             size="sm"
             variant="ghost"
-            className="flex items-center justify-start w-full"
+            className="flex w-full items-center justify-start"
             onClick={() => setSelectedListId(Number(list.id))}
           >
             <Badge
-              className="w-3 h-3 rounded-full mr-2"
+              className="mr-2 h-3 w-3 rounded-full"
               style={{ backgroundColor: folderColor?.hex }}
             />
             <span>{list.name}</span>

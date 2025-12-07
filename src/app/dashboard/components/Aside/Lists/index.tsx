@@ -1,13 +1,8 @@
-import { use } from 'react'
-import { Color, List, Task } from './types'
-import ListsClient from '@/app/dashboard/components/Aside/Lists/ListClient'
+import ListsClient from './ListClient'
+import { Color, List, Task } from '@/app/dashboard/components/Aside/types'
 
-export default function Lists({
-                                dataPromise,
-                              }: {
-  dataPromise: Promise<[List[], Color[], Task[]]>
-}) {
-  const [lists, colors, tasks] = use(dataPromise)
+export default function Lists({ data }: { data: [List[], Color[], Task[]] }) {
+  const [lists, colors, tasks] = data
 
   return <ListsClient lists={lists} colors={colors} tasks={tasks} />
 }

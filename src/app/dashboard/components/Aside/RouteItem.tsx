@@ -1,22 +1,25 @@
+'use client'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
+import { ReactNode } from 'react'
 
 interface RouteItemProps {
   id: number
   href: string
   text: string
-  icon: React.ReactNode
+  icon: ReactNode
 }
 
-export const RouteItem = ({ id, href, text, icon }: RouteItemProps) => {
+export const RouteItem = ({ href, text, icon }: RouteItemProps) => {
   const pathname = usePathname()
 
   return (
     <Link
       href={href}
       className={clsx(
-        'flex items-center p-2 mb-2 rounded-lg transition-colors',
+        'mb-2 flex items-center rounded-lg p-2 transition-colors',
         pathname === href && 'bg-gray-100 dark:bg-gray-800',
       )}
     >

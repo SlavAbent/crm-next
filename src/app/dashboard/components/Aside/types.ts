@@ -7,3 +7,9 @@ export type Task = {
   text: string
   completed: boolean
 }
+
+export type DataPropsType = {
+  lists: List[]
+  colors: Color[]
+  tasks: Task[]
+}
