@@ -1,11 +1,11 @@
-import { getColors } from '@/lib/api/getColors'
-import { getLists } from '@/lib/api/getLists'
-import { getTasks } from '@/lib/api/getTasks'
 import { Suspense } from 'react'
-import Lists from '../Lists'
+import Lists from '@/app/dashboard/components/Aside/Lists'
+import { getColors, getLists, getTasks } from '@/lib/api/api'
 
-export default function Folders() {
+
+export default async function Folders() {
   const dataPromise = Promise.all([getLists(), getColors(), getTasks()])
+
   return (
     <Suspense fallback={<div>Загрузка списков...</div>}>
       <Lists dataPromise={dataPromise} />

@@ -1,10 +1,12 @@
-import { getLists } from '@/lib/api/getLists'
-import { getTasks } from '@/lib/api/getTasks'
-import DashboardContent from './components/DashbordContent'
-import { getColors } from '@/lib/api/getColors'
+import { getColors, getLists, getTasks } from '@/lib/api/api'
+import DashboardContent from '@/app/dashboard/components/DashbordContent'
 
 export default async function Dashboard() {
-  const dataAllPromises = Promise.all([getLists(), getColors(), getTasks()])
+  const [lists, colors, tasks] = await Promise.all([
+    getLists(),
+    getColors(),
+    getTasks(),
+  ])
 
-  return <DashboardContent dataAllPromises={dataAllPromises} />
+  return <DashboardContent lists={lists} colors={colors} tasks={tasks} />
 }

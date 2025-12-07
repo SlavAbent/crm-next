@@ -16,9 +16,9 @@ export const ExpandIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
       fill={fill}
       {...props}
       stroke={stroke}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path d="m9 6-6 6 6 6" />
       <path d="M3 12h14" />

@@ -1,29 +1,26 @@
 'use client'
 
-import { use } from 'react'
 import { List, Color, Task } from '../Aside/Lists/types'
-import { useTasksContext } from '@/shared/context/TasksContext'
+import { useTasksContext } from '@/shared/hooks/useTasksContext'
 
-export default function DashboardContent({
-  dataAllPromises,
-}: {
-  dataAllPromises: Promise<[List[], Color[], Task[]]>
-}) {
+interface Props {
+  lists: List[]
+  colors: Color[]
+  tasks: Task[]
+}
+
+export default function DashboardContent({ lists, colors, tasks }: Props) {
   const { selectedListId } = useTasksContext()
-  const [lists, colors, tasks] = use(dataAllPromises)
-
-  console.log(selectedListId)
-  //   console.log(tasks)
 
   const filteredTasks = selectedListId
     ? tasks.filter(task => task.listId === selectedListId)
     : tasks
 
   return (
-    <>
+    <div>
       {filteredTasks.map(task => (
         <div key={task.id}>{task.text}</div>
       ))}
-    </>
+    </div>
   )
 }

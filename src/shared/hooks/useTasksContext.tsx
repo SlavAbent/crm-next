@@ -7,20 +7,20 @@ type TasksContextType = {
   setSelectedListId: (id: number | null) => void
 }
 
-const TasksContext = createContext<TasksContextType | undefined>(undefined)
+const UseTasksContext = createContext<TasksContextType | undefined>(undefined)
 
 export function TasksProvider({ children }: { children: React.ReactNode }) {
   const [selectedListId, setSelectedListId] = useState<number | null>(null)
 
   return (
-    <TasksContext.Provider value={{ selectedListId, setSelectedListId }}>
+    <UseTasksContext.Provider value={{ selectedListId, setSelectedListId }}>
       {children}
-    </TasksContext.Provider>
+    </UseTasksContext.Provider>
   )
 }
 
 export function useTasksContext() {
-  const ctx = useContext(TasksContext)
+  const ctx = useContext(UseTasksContext)
   if (!ctx) {
     throw new Error('useTasksContext must be used inside <TasksProvider>')
   }

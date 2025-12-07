@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 
 import { Aside } from '@/app/dashboard/components/Aside'
 import type { Metadata } from 'next'
-import { TasksProvider } from '@/shared/context/TasksContext'
+import { TasksProvider } from '@/shared/hooks/useTasksContext'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
